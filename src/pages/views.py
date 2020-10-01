@@ -10,7 +10,14 @@ def contact_view(request, *args, **kwargs):
     return render(request, "contact.html", {})
 
 def about_view(request, *args, **kwargs):
-    return render(request, "about.html", {})
+    my_context = {
+        "description": "this is about us description.",
+        "this_is_true": True,
+        "my_number": 123,
+        "my_list": [1313, 4231, 312, "Abc"],
+        "my_html": "<h1>This is some Html</h1>"
+    }
+    return render(request, "about.html", my_context)
 
 def social_view(*args, **kwargs):
     return  HttpResponse("<h1>Social Media</h1>")
