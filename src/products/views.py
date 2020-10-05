@@ -19,3 +19,9 @@ def product_create_view(request):
         'form': form
     }
     return render(request, "products/product_create.html", context)
+
+def dynamic_lookup_view(request, id):
+    obj = Product.objects.get(id=1)
+    context = {}
+    return render(request, "products/product_detail.html", context)
+ 
