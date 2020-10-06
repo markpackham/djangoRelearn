@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from .forms import ArticleForm
 from .models import Article
 
@@ -15,3 +16,6 @@ def article_detail_view(request, id):
         "object": obj
     }
     return render(request, "articles/article_detail.html", context)
+
+class ArticleListView(ListView):
+    queryset = Article.objects.all()
