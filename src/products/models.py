@@ -10,4 +10,4 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         # more dynamic than /products/{self.id} since we might change /products/ in the future
-        return reverse("product-detail", kwargs={"id": self.id})
+        return reverse("products:product-detail", kwargs={"id": self.id})
