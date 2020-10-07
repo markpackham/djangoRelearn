@@ -25,4 +25,5 @@ urlpatterns = [
     path('social/', social_view, name='social'),
     path('products/', include('products.urls')),
     path('articles/', include('articles.urls')),
+    path('courses/', include('courses.urls')),
 ]
